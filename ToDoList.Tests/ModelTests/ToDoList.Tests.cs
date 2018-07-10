@@ -12,42 +12,35 @@ namespace ToDoList.Tests
 public class ModelTest
   {
 
-[TestMethod]
-public void GetAll_DbStartsEmpty_0()
-{
-  //Arrange
-  //Act
 
-  int result = City.GetAll().Count;
-
-  //Assert
-  Assert.AreEqual(0, result);
-}
 [TestMethod]
 public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
 {
   // Arrange, Act
-  City firstItem = new City(11);
-  City secondItem = new City(11);
+  City firstCity = new City("London", "USA", "England", 2000);
+  firstCity.Save();
+
+  City recoveredCity = City.GetAll()[0];
+
 
   // Assert
-  Assert.AreEqual(firstItem, secondItem);
+  Assert.AreEqual(firstCity, recoveredCity);
 }
-
-[TestMethod]
-public void Save_SavesToDatabase_ItemList()
-{
-  //Arrange
-  City testCity = new City(1);
-
-  //Act
-  testCity.Save();
-  List<City> result = City.GetAll();
-  List<City> testList = new List<City>{testCity};
-
-  //Assert
-  CollectionAssert.AreEqual(testList, result);
-}
+//
+// [TestMethod]
+// public void Save_SavesToDatabase_ItemList()
+// {
+//   //Arrange
+//   City testCity = new City(1);
+//
+//   //Act
+//   testCity.Save();
+//   List<City> result = City.GetAll();
+//   List<City> testList = new List<City>{testCity};
+//
+//   //Assert
+//   CollectionAssert.AreEqual(testList, result);
+// }
 
 
 }

@@ -10,16 +10,15 @@ namespace ToDoList.Models
     private string _code;
     private string _district;
     private int _population;
-    public string _userInput;
-//    private static List<City> _instances = new List<City> {};
-    public City(int Id = 0, string Name="", string Code = "", string District="", int Population=0) //string userInput = ""
+
+    public City(string Name, string Code, string District, int Population, int Id = 0)
     {
       _id = Id;
       _name = Name;
       _code = Code;
       _district = District;
       _population = Population;
-    //  _userInput = userInput;
+      //  _userInput = userInput;
     }
 
     // public void SetUserInput(string newInput)
@@ -60,22 +59,31 @@ namespace ToDoList.Models
 
     public void Save()
     {
-        MySqlConnection conn = DB.Connection();
-        conn.Open();
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
 
-        var cmd = conn.CreateCommand() as MySqlCommand;
-        cmd.CommandText = @"INSERT INTO `City` (`name`) VALUES (@CityName);";
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO city (Name, CountryCode, District, Population) VALUES (@City, @CountryCode, @District, @Population);";
 
-        // more logic will go here in a moment
+      //  @"INSERT INTO city (`Name`) VALUES (@CityName);";
 
-
-         conn.Close();
-         if (conn != null)
-         {
-             conn.Dispose();
-         }
+      MySqlParameter city = new MySqlParameter("@City", _name);
+      MySqlParameter code = new MySqlParameter("@CountryCode", _code);
+      MySqlParameter district = new MySqlParameter("@District", _district);
+      MySqlParameter pop = new MySqlParameter("@Population", _population);
+      cmd.Parameters.Add(city);
+      cmd.Parameters.Add(code);
+      cmd.Parameters.Add(district);
+      cmd.Parameters.Add(pop);
+      cmd.ExecuteNonQuery();    // This line is new!
+      _id = (int) cmd.LastInsertedId;
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
     }
-
+    //test object
     public override bool Equals(System.Object otherCity)
     {
       if (!(otherCity is City))
@@ -85,14 +93,15 @@ namespace ToDoList.Models
       else
       {
         City newCity = (City) otherCity;
+        bool idCity = (this.GetId() == newCity.GetId());
         bool descriptionEquality = (this.GetName() == newCity.GetName());
-        return (descriptionEquality);
+        return (idCity && descriptionEquality);
       }
     }
 
-
+    //list all cities
     public static List<City> GetAll()
-  {
+    {
       List<City> allCities = new List<City> {};
       MySqlConnection conn = DB.Connection();
       conn.Open();
@@ -106,45 +115,46 @@ namespace ToDoList.Models
         string cityCode = rdr.GetString(2);
         string cityDistrict = rdr.GetString(3);
         int cityPopulation = rdr.GetInt32(4);
-        City newCity = new City(cityId, cityName, cityCode, cityDistrict, cityPopulation);
+        City newCity = new City(cityName, cityCode, cityDistrict, cityPopulation, cityId);
         allCities.Add(newCity);
       }
       conn.Close();
       if (conn != null)
       {
-          conn.Dispose();
+        conn.Dispose();
       }
       return allCities;
-  }
-     // public static List<City> SearchByCity(string newcity)
-     // {
-     //     List<City> allCities = new List<City> {};
-     //     MySqlConnection conn = DB.Connection();
-     //     conn.Open();
-     //     MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-     //     cmd.CommandText = cmd.CommandText = @"SELECT * FROM city" + " WHERE name LIKE \'" + newcity + "%\'" + ";";
-     //     MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-     //     while(rdr.Read())
-     //     {
-     //       int cityId = rdr.GetInt32(0);
-     //       string cityName = rdr.GetString(1);
-     //       string cityCode = rdr.GetString(2);
-     //       string cityDistrict = rdr.GetString(3);
-     //       int cityPopulation = rdr.GetInt32(4);
-     //       City newCity = new City(cityId, cityName, cityCode, cityDistrict, cityPopulation);
-     //       allCities.Add(newCity);
-     //     }
-     //     conn.Close();
-     //     if (conn != null)
-     //     {
-     //         conn.Dispose();
-     //     }
-     //     return allCities;
-     // }
+    }
+    //search by city
+    public static List<City> SearchByCity(string newcity)
+    {
+      List<City> allCities = new List<City> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = cmd.CommandText = @"SELECT * FROM city" + " WHERE name LIKE \'" + newcity + "%\'" + ";";
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int cityId = rdr.GetInt32(0);
+        string cityName = rdr.GetString(1);
+        string cityCode = rdr.GetString(2);
+        string cityDistrict = rdr.GetString(3);
+        int cityPopulation = rdr.GetInt32(4);
+        City newCity = new City(cityName, cityCode, cityDistrict, cityPopulation, cityId);
+        allCities.Add(newCity);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allCities;
+    }
 
-
-  public static void DeleteAll()
-  {
+    //delete all
+    public static void DeleteAll()
+    {
       MySqlConnection conn = DB.Connection();
       conn.Open();
 
@@ -156,8 +166,8 @@ namespace ToDoList.Models
       conn.Close();
       if (conn != null)
       {
-          conn.Dispose();
+        conn.Dispose();
       }
- }
-}
+    }
+  }
 }
