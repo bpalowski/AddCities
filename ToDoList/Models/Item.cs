@@ -151,6 +151,36 @@ namespace ToDoList.Models
       }
       return allCities;
     }
+    //order by population
+
+    public static List<City> OrderByPopulation()
+    {
+      List<City> allCities = new List<City> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM city ORDER BY population" + ";";
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int cityId = rdr.GetInt32(0);
+        string cityName = rdr.GetString(1);
+        string cityCode = rdr.GetString(2);
+        string cityDistrict = rdr.GetString(3);
+        int cityPopulation = rdr.GetInt32(4);
+        City newCity = new City(cityName, cityCode, cityDistrict, cityPopulation, cityId);
+
+        allCities.Add(newCity);
+        
+
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allCities;
+    }
 
     //delete all
     public static void DeleteAll()

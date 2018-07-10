@@ -13,7 +13,7 @@ namespace ToDoList.Controllers
         {
         //  City newCity= new City(Request.Form["new-city"]);
          //SetUserInput(Request.Query["new-city"]);
-         return View(City.GetAll());
+         return View(City.OrderByPopulation());
         }
 
         [HttpGet("/items/new")]
