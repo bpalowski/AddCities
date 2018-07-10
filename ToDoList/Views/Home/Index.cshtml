@@ -1,2 +1,57 @@
 <h1>Cities</h1>
 <p><a href="/items/new">Back to list.</a></p>
+
+<h1>Cities</h1>
+<table>
+<tr>
+   <th>ID</th>
+   <th>NAME</th>
+   <th>CODE</th>
+   <th>DISTRICT</th>
+   <th>POPULATION</th>
+ </tr>
+ <tr>
+    <td>
+    @foreach(var city in Model)
+    {
+    <ul>
+        <p>"@city.GetId()"</p>
+    </ul>
+    }
+    </td>
+    <td>
+    @foreach(var city in Model)
+        {
+        <ul>
+            <p>"@city.GetName()"</p>
+        </ul>
+        }
+    </td>
+    <td>
+    @foreach(var city in Model)
+        {
+        <ul>
+            <p>"@city.GetCode()"</p>
+        </ul>
+        }
+    </td>
+    <td>
+     @foreach(var city in Model)
+        {
+        <ul>
+            <p>"@city.GetDistrict()"</p>
+        </ul>
+        }
+    </td>
+    <td>
+    @foreach(var city in Model)
+        {
+        <ul>
+            <p>"@city.GetPopulation()"</p>
+        </ul>
+        }
+    </td>
+  </tr>
+
+
+</table>

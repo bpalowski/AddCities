@@ -11,3 +11,17 @@
 /Users/Guest/Desktop/ToDoList.Solution/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.AssemblyInfo.cs
 /Users/Guest/Desktop/ToDoList.Solution/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.dll
 /Users/Guest/Desktop/ToDoList.Solution/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.pdb
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.deps.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.runtimeconfig.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.runtimeconfig.dev.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.csproj.CoreCompileInputs.cache
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.AssemblyInfo.cs
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/obj/Debug/netcoreapp1.1/ToDoList.Tests.pdb
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.Tests.pdb
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList.Tests/bin/Debug/netcoreapp1.1/ToDoList.pdb

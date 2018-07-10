@@ -31,3 +31,12 @@
 /Users/Guest/Desktop/ToDoList-CSharp-2-controllers/ToDoList/obj/Debug/netcoreapp1.1/ToDoList.pdb
 /Users/Guest/Desktop/ToDoList-CSharp-2-controllers/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.dll
 /Users/Guest/Desktop/ToDoList-CSharp-2-controllers/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.pdb
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.deps.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.runtimeconfig.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.runtimeconfig.dev.json
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/bin/Debug/netcoreapp1.1/ToDoList.pdb
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/obj/Debug/netcoreapp1.1/ToDoList.csproj.CoreCompileInputs.cache
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/obj/Debug/netcoreapp1.1/ToDoList.AssemblyInfo.cs
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/obj/Debug/netcoreapp1.1/ToDoList.dll
+/Users/eddieharris/Desktop/CSharp-database-World-/ToDoList/obj/Debug/netcoreapp1.1/ToDoList.pdb

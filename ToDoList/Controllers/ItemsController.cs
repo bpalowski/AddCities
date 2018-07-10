@@ -21,11 +21,11 @@ namespace ToDoList.Controllers
         {
             return View();
         }
-        [HttpPost("/items")]
-        public ActionResult Create()
-        {
-
-          return View("Index",City.SearchByCity(Request.Form["newcity"]));
-      }
+      //   [HttpPost("/items")]
+      //   public ActionResult Create()
+      //   {
+      //
+      //     return View("Index",City.SearchByCity(Request.Form["newcity"]));
+      // }
         }
     }

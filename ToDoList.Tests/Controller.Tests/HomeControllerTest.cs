@@ -35,7 +35,7 @@ namespace ToDoList.Tests
           var result = indexView.ViewData.Model;
 
           //Assert
-          Assert.IsInstanceOfType(result, typeof(List<Item>));
+          Assert.IsInstanceOfType(result, typeof(List<City>));
       }
 
     }
